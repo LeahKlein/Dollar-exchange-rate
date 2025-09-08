@@ -1,0 +1,12 @@
+.Board{
+    display: flex;
+    top: 20%;
+    /* left: 50%; */
+    width: 50%;
+    height: auto;
+    background-color: #61e4fb;
+    justify-content: center; /* Align items center horizontally if needed */
+    align-items: center; /* Align items center vertically if needed */
+    padding: 20px; /* כדי להוסיף רווח פנימי */
+    box-sizing: border-box; /* כך ש-padding לא יוסיף גובה */
+}

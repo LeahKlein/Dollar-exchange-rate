@@ -1,0 +1,6 @@
+apscheduler ~= 3.11
+requests ~= 2.32
+Flask ~= 2.2.2
+flask-cors ~= 6.0.1
+aiosqlite ~= 0.21.0
+Flask[async]

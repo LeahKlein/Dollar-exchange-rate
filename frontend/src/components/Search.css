@@ -1,0 +1,8 @@
+.searchButton{
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    width: 10vw;
+    height: 10vh;
+    background-color: white;
+}
