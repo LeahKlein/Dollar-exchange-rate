@@ -40,8 +40,26 @@ function App() {
     fetchData();
   };
 
+  // const sortData = async () => {
+  //   const value = isDate ? 'date' : 'rate'; 
+  // };
+
   const sortData = async () => {
-    const value = isDate ? 'date' : 'rate'; 
+    setIsDate(!isDate);
+    const value = isDate ? 'date' : 'rate';
+    try {
+      console.log({value}); // Added log for when fetch begins
+      const response = await fetch(`http://host.docker.internal:8000/sort?value=${value}`);
+      console.log('Response Status:', response.status); // Log the response status
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const result = await response.json();
+      console.log('sort data:', result); // Log the fetched data
+      setData(result);
+    } catch (error) {
+      console.error('Error sort data:', error); // Log any errors
+    }
   };
 
   const setDisplay = () => {
