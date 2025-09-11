@@ -21,7 +21,7 @@ function App() {
   const [differences, setDifferences] = useState([]);
   const [averageDifferences, setAverageDifferences] = useState([]);
   const [resultMatrix, setResultMatrix] = useState([]);
-  const [showMatrix, setShowMatrix] = useState(false); // Add showMatrix state
+  const [showMatrix, setShowMatrix] = useState(false);
 
   const fetchData = async () => {
     try {
@@ -40,25 +40,21 @@ function App() {
     fetchData();
   };
 
-  // const sortData = async () => {
-  //   const value = isDate ? 'date' : 'rate'; 
-  // };
-
   const sortData = async () => {
     setIsDate(!isDate);
     const value = isDate ? 'date' : 'rate';
     try {
-      console.log({value}); // Added log for when fetch begins
+      console.log({value});
       const response = await fetch(`http://host.docker.internal:8000/sort?value=${value}`);
-      console.log('Response Status:', response.status); // Log the response status
+      console.log('Response Status:', response.status);
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
       const result = await response.json();
-      console.log('sort data:', result); // Log the fetched data
+      console.log('sort data:', result);
       setData(result);
     } catch (error) {
-      console.error('Error sort data:', error); // Log any errors
+      console.error('Error sort data:', error);
     }
   };
 

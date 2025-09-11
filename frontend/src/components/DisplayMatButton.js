@@ -1,6 +1,3 @@
-// DisplayMatButton
-// import "./SortButton.css";
-
 import React from 'react';
 import "./SortButton.css";
 
